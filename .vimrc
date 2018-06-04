@@ -30,6 +30,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'tpope/vim-endwise'
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/neomru.vim'
+    NeoBundle 'szw/vim-tags'
     ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 call neobundle#end()
 filetype plugin indent on
@@ -146,11 +147,11 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
-"letters over 80 highlighted>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"letters over 100 highlighted>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 if exists('+colorcolumn')
-  set colorcolumn=80
+  set colorcolumn=100
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 endif
 
 " NERDTress File highlighting>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -170,3 +171,5 @@ call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
+"vim-tags setting>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+au BufNewFile,BufRead *.php let g:vim_tags_project_tags_command = "ctags --languages=php -f ~/php.tags `pwd` 2>/dev/null &"
