@@ -2,6 +2,7 @@
 set -x BUNDLER_EDITOR vim
 
 set fish_plugins theme peco
+ulimit -n 9480
 
 # Bind for peco history to Ctrl+r
 function fish_user_key_bindings
