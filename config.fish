@@ -10,6 +10,9 @@ function fish_user_key_bindings
   bind \cr peco_select_history
 end
 
+# rbenv setup
+status --is-interactive; and . (rbenv init -|psub)
+
 # Balias
 balias rr 'rake routes'
 balias rs 'rails s'
