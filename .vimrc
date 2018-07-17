@@ -35,6 +35,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/neomru.vim'
     NeoBundle 'szw/vim-tags'
+    NeoBundle 'tpope/vim-fugitive'
     ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 call neobundle#end()
 filetype plugin indent on
