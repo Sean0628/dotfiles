@@ -1,3 +1,8 @@
 # dotfiles
-参考: [dotfilesをGitHubで管理](https://qiita.com/okamos/items/7f5461814e8ed8916870)
+## installment
 
+```
+$ cd ~/
+$ git clone https://github.com/Sean0628/dotfiles.git
+$ sh dotfilesLink.sh
+```
