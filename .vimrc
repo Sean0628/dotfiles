@@ -36,6 +36,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'Shougo/neomru.vim'
     NeoBundle 'szw/vim-tags'
     NeoBundle 'tpope/vim-fugitive'
+    NeoBundle 'simeji/winresizer'
     ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 call neobundle#end()
 filetype plugin indent on
@@ -44,6 +45,7 @@ filetype plugin indent on
 "Keymap
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ">>>Normal mode
+nnoremap <silent><C-s> :WinResizerStartResize<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap / /\v
