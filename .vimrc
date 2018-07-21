@@ -45,7 +45,6 @@ filetype plugin indent on
 "Keymap
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ">>>Normal mode
-nnoremap <silent><C-s> :WinResizerStartResize<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap / /\v\c
@@ -84,6 +83,11 @@ augroup TransparentBG
 	autocmd Colorscheme * highlight Folded ctermbg=none
 	autocmd Colorscheme * highlight EndOfBuffer ctermbg=none
 augroup END
+
+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"winresizer setting
+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+let g:winresizer_start_key = '<C-s>'
 
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "neocomplete setting
