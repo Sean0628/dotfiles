@@ -48,7 +48,7 @@ filetype plugin indent on
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap / /\v\c
-nnoremap ? /\v\c
+nnoremap ? ?\v\c
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
