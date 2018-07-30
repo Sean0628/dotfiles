@@ -46,6 +46,7 @@ filetype plugin indent on
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ">>>Normal mode
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-t> :TagsGenerate<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap / /\v\c
 nnoremap ? ?\v\c
