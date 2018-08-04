@@ -15,8 +15,9 @@ else
   if [ -d $(dirname $FILE_PATH) ]; then
     create_file
     output_logs $*
+  else
+    mkdir $(dirname $FILE_PATH)
+    create_file
+    output_logs $*
   fi
-  mkdir $(dirname $FILE_PATH)
-  create_file
-  output_logs $*
 fi
