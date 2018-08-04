@@ -23,6 +23,7 @@ balias gc 'git commit'
 balias gco 'git checkout'
 balias gd 'git diff'
 balias gs 'git status'
+balias wl 'worklog'
 
 # rbenv setting
 status --is-interactive; and source (rbenv init -|psub)
