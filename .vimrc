@@ -12,6 +12,7 @@ set smarttab
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set clipboard=unnamed,autoselect
+set history=200
 
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "NeoBundle related
@@ -52,6 +53,11 @@ nnoremap / /\v\c
 nnoremap ? ?\v\c
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+"to toggle between files
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
 
 ">>>Input mode
 inoremap <silent> jj <ESC>
