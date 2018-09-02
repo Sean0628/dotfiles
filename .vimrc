@@ -10,8 +10,9 @@ set smartindent
 set smarttab
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-set clipboard=unnamed,autoselect
+set clipboard+=unnamed
 set history=200
+" set cursorline "cause serious delay
 
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "NeoBundle related
