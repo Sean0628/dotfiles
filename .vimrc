@@ -4,7 +4,6 @@
 set number
 set scrolloff=3
 set hlsearch
-set cursorline
 set ruler
 set noswapfile
 set smartindent
