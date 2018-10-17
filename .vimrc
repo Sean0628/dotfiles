@@ -9,10 +9,10 @@ set noswapfile
 set smartindent
 set smarttab
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%,space:•
 set clipboard+=unnamed
 set history=200
-" set cursorline "cause serious delay
+set ts=2 sw=2 et
 
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "NeoBundle related
@@ -31,7 +31,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'tacahiroy/ctrlp-funky'
     NeoBundle 'suy/vim-ctrlp-commandline'
     NeoBundle 'scrooloose/syntastic'
-    NeoBundle 'nathanaelkane/vim-indent-guides'
     NeoBundle 'tpope/vim-endwise'
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/neomru.vim'
@@ -132,14 +131,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
-
-">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"vim-indent-guides setting
-">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-let g:indent_guides_enable_on_vim_startup = 1
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgray
-set ts=2 sw=2 et
 
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "全角スペース・行末のスペース・タブの可視化

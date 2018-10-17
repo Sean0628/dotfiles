@@ -26,6 +26,9 @@ balias gs  'git status'
 
 balias v   'vagrant'
 
+balias gr  'grep'
+balias grr 'grep -R'
+
 # rbenv setting
 status --is-interactive; and source (rbenv init -|psub)
 
