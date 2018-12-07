@@ -1,6 +1,8 @@
 # Set vim as a bundler editor
 set -x BUNDLER_EDITOR vim
 set -x SVN_EDITOR vim
+set -x JAVA_HOME /usr/libexec/java_home -v 1.7
+set -x TOMCAT_HOME $HOME/others/tomcat/apache-tomcat-6.0.26
 
 # plugins
 set fish_plugins theme peco
@@ -25,6 +27,10 @@ balias gd  'git diff'
 balias gs  'git status'
 
 balias v   'vagrant'
+balias gr  'grep'
+balias grr 'grep -R'
+
+balias wf  'vim (date +%Y%m%d).md'
 
 balias gr  'grep'
 balias grr 'grep -R'
@@ -34,9 +40,6 @@ status --is-interactive; and source (rbenv init -|psub)
 
 # nodebrew
 set -x PATH $HOME/.nodebrew/current/bin $PATH
-
-# vim
-set -x PATH /usr/local/bin $PATH
 
 # others
 ulimit -n 9480
