@@ -32,9 +32,6 @@ balias grr 'grep -R'
 
 balias wf  'vim (date +%Y%m%d).md'
 
-balias gr  'grep'
-balias grr 'grep -R'
-
 # rbenv setting
 status --is-interactive; and source (rbenv init -|psub)
 
