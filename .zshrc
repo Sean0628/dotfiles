@@ -56,31 +56,31 @@ function prompt_current_branch() {
   local branch_name st branch_status color
 
   if [ ! -e  '.git' ]; then
-    exit 0
+    return 0
   fi
 
   branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
   st=`git status 2> /dev/null`
 
-  if [[ -n `echo "$st" | grep '^nothing to'` ]]; then
+  if [[ -n `echo $st | grep '^nothing to'` ]]; then
     color='green'
-  elif [[ -n `echo "$st" | grep '^Untracked files'` ]]; then
+  elif [[ -n `echo $st | grep '^Untracked files'` ]]; then
     branch_status='?'
     color='red'
-  elif [[ -n `echo "$st" | grep '^Changes not staged for commit'` ]]; then
+  elif [[ -n `echo $st | grep '^Changes not staged for commit'` ]]; then
     branch_status='+'
     color='red'
-  elif [[ -n `echo "$st" | grep '^Changes to be committed'` ]]; then
+  elif [[ -n `echo $st | grep '^Changes to be committed'` ]]; then
     branch_status='!'
     color='yellow'
-  elif [[ -n `echo "$st" | grep '^rebase in progress'` ]]; then
+  elif [[ -n `echo $st | grep '^rebase in progress'` ]]; then
     # comflicts
     echo "%F{red}!(no branch)"
-    exit 0
+    return 0
   else
     color='blue'
   fi
-  echo "%F{${color}}[$branch_name$branch_status]%f"
+  echo "%F{$color}[$branch_name$branch_status]%f"
 }
 
 function prompt_exit_status() {
