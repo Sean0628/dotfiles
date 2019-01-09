@@ -49,7 +49,7 @@ ulimit -n 9480
 
 # prompt
 function precmd() {
-  PROMPT="`prompt_exit_status`%~ `prompt_current_branch`> "
+  PROMPT="`prompt_exit_status` `prompt_current_path` `prompt_current_branch`> "
 }
 
 function prompt_current_branch() {
@@ -81,6 +81,10 @@ function prompt_current_branch() {
     color='blue'
   fi
   echo "%F{$color}[$branch_name$branch_status]%f"
+}
+
+function prompt_current_path() {
+  echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}
 }
 
 function prompt_exit_status() {
