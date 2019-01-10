@@ -98,5 +98,12 @@ function prompt_exit_status() {
   echo "%(?."%B%F{cyan}$success%b%f"."%B%F{red}$fail%b%f")"
 }
 
+# Google search
+ggl(){
+    local url="https://www.google.co.jp/search?q=$1"
+    local g="/Applications/Google Chrome.app"
+    open $url -a $g
+}
+
 # load .zshrc.local if exists
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
