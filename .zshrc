@@ -44,6 +44,7 @@ alias gs='git status'
 alias ggr='git grep'
 
 alias wf='vim $(date +%Y%m%d).md'
+alias sl='open /Applications/Slack.app'
 
 # set max file descriptor
 ulimit -n 9480
