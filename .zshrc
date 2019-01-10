@@ -41,6 +41,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gf='git fetch'
 alias gs='git status'
+alias ggr='git grep'
 
 alias wf='vim $(date +%Y%m%d).md'
 
@@ -95,3 +96,6 @@ function prompt_exit_status() {
 
   echo "%(?."%B%F{cyan}$success%b%f"."%B%F{red}$fail%b%f")"
 }
+
+# load .zshrc.local if exists
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
