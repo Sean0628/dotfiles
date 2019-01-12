@@ -132,8 +132,8 @@ function gcop() {
 }
 
 ## get commit title
-function gct() {
-  g log | sed 's/^[ \t]*//' | egrep "^refs" | peco | pbcopy
+function gt() {
+  git log | sed 's/^[ \t]*//' | egrep "^refs" | peco | pbcopy
 }
 # }
 
