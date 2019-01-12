@@ -1,9 +1,15 @@
-# evals
+# evals {
 export BUNDLER_EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH" # rbenv
 export PATH="$HOME/.nodebrew/current/bin:$PATH" # nodebrew
+# }
 
-# history
+# modify misspelled commands
+setopt correct
+# set max file descriptor
+ulimit -n 9480
+
+# history {
 ## where to place history file
 export HISTFILE=$HOME/.zsh_history
 ## the size of history stored in-memory
@@ -19,14 +25,18 @@ setopt hist_reduce_blanks
 ## history search
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
-## history incremental search
-bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
 
-# modify misspelled commands
-setopt correct
+## peco
+function peco_history_search() {
+  BUFFER=`history -n 1 | tail -r | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+zle -N peco_history_search
+bindkey '^R' peco_history_search
+# }
 
-# alias
+# alias {
 alias v='vagrant'
 alias gr='grep'
 alias grr='grep -R'
@@ -36,8 +46,8 @@ alias so='source'
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
+alias gc='git checkout'
 alias gc='git commit'
-alias gco='git checkout'
 alias gd='git diff'
 alias gf='git fetch'
 alias gs='git status'
@@ -45,11 +55,9 @@ alias ggr='git grep'
 
 alias wf='vim $(date +%Y%m%d).md'
 alias sl='open /Applications/Slack.app'
+# }
 
-# set max file descriptor
-ulimit -n 9480
-
-# prompt
+# prompt {
 function precmd() {
   PROMPT="`prompt_exit_status` `prompt_current_path` `prompt_current_branch`> "
 }
@@ -97,13 +105,37 @@ function prompt_exit_status() {
 
   echo "%(?."%B%F{cyan}$success%b%f"."%B%F{red}$fail%b%f")"
 }
+# }
 
-# Google search
-ggl(){
+# Google search {
+function ggl(){
     local url="https://www.google.co.jp/search?q=$1"
     local g="/Applications/Google Chrome.app"
     open $url -a $g
 }
+# }
+
+# git utils {
+## git checkout a branch selected with peco
+function gcop() {
+  if [ $(echo $1 | egrep -- "^-a$") ]; then
+      local opt="$1"
+      shift
+  fi
+
+  git branch $opt |
+    cut -b 3- |
+    grep -v -- '->' |
+    peco |
+    sed -e 's/remotes\/origin\///' |
+    xargs git checkout
+}
+
+## get commit title
+function gct() {
+  g log | sed 's/^[ \t]*//' | egrep "^refs" | peco | pbcopy
+}
+# }
 
 # load .zshrc.local if exists
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
