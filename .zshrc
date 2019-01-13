@@ -1,7 +1,9 @@
 # evals {
 export BUNDLER_EDITOR=vim
-export PATH="$HOME/.rbenv/bin:$PATH" # rbenv
-export PATH="$HOME/.nodebrew/current/bin:$PATH" # nodebrew
+if [ ! -z "$TMUX" ]; then
+  export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH" # [rbenv, nodebrew]
+  eval "$(rbenv init -)"
+fi
 # }
 
 # modify misspelled commands
@@ -37,6 +39,7 @@ bindkey '^R' peco_history_search
 # }
 
 # alias {
+alias vim='nvim'
 alias v='vagrant'
 alias gr='grep'
 alias grr='grep -R'
