@@ -140,5 +140,6 @@ function gt() {
 }
 # }
 
-# load .zshrc.local if exists
+# load .zshrc.local if exists {
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+# }
