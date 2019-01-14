@@ -22,3 +22,7 @@ fi
 if ! command_exists CMake ; then
   brew install CMake
 fi
+
+if ! command_exists tmux ; then
+  brew install tmux
+fi
