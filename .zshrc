@@ -45,6 +45,7 @@ alias gr='grep'
 alias grr='grep -R'
 alias ll='ls -l'
 alias so='source'
+alias ag='ag --nocolor'
 
 alias g='git'
 alias ga='git add'
