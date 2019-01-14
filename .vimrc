@@ -83,7 +83,7 @@ let g:one_tabline = 0
 "Background setting
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 augroup TransparentBG
-  	autocmd!
+	autocmd!
 	autocmd Colorscheme * highlight Normal ctermbg=none
 	autocmd Colorscheme * highlight NonText ctermbg=none
 	autocmd Colorscheme * highlight LineNr ctermbg=none

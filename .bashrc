@@ -6,7 +6,7 @@ export SVN_EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 # nodebrew settings
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # others
 ulimit -n 9480
