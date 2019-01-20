@@ -44,10 +44,10 @@ if dein#load_state('~/.cache/dein')
   call dein#add('scrooloose/nerdtree')
   call dein#add('tpope/vim-fugitive')
   call dein#add('Shougo/denite.nvim')
-  call dein#add('vim-syntastic/syntastic')
   call dein#add('vim-airline/vim-airline')
   call dein#add('tpope/vim-endwise')
   call dein#add('Valloric/YouCompleteMe', {'merged': 0})
+  call dein#add('w0rp/ale')
 " }
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -145,25 +145,6 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-" }
-
-" syntastic {
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'active',
-            \ 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_rubocop_exec      = "~/.rbenv/shims/ruby" "~/.rbenv/shims/rubocop"
-" }
-
-" vim-airline {
-let g:airline#extensions#tabline#enabled = 1
 " }
 
 " ctags {
