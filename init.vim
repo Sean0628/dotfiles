@@ -48,6 +48,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-endwise')
   call dein#add('Valloric/YouCompleteMe', {'merged': 0})
   call dein#add('w0rp/ale')
+  call dein#add('mattn/emmet-vim')
+  call dein#add('jremmen/vim-ripgrep')
 " }
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')

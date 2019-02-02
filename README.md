@@ -20,5 +20,5 @@ $ ./install.py --clang-completer
 ```
 $ cd ~/
 $ git clone https://github.com/Sean0628/dotfiles.git
-$ sh install.sh
+$ sh ~/dotfiles/install.sh
 ```

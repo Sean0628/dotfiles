@@ -26,3 +26,7 @@ fi
 if ! command_exists tmux ; then
   brew install tmux
 fi
+
+if ! command_exists ripgrep ; then
+  brew install ripgrep
+fi
