@@ -132,6 +132,14 @@ function gcop() {
     xargs git checkout
 }
 
+## git branch -D a branch selected with peco
+function gdp() {
+  git branch $opt |
+    cut -b 3- |
+    peco |
+    xargs git branch -D 
+}
+
 ## get commit title
 function gt() {
   git log | sed 's/^[ \t]*//' | egrep "^refs" | peco | pbcopy
