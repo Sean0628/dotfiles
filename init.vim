@@ -50,7 +50,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('w0rp/ale')
   call dein#add('mattn/emmet-vim')
   call dein#add('jremmen/vim-ripgrep')
-  call dein#add('posva/vim-vue')
 " }
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -153,10 +152,6 @@ call denite#custom#var('grep', 'final_opts', [])
 
 " ctags {
 nnoremap <C-c> :!ctags -R .<CR>
-" }
-
-" vim-vue {
-let g:vue_disable_pre_processors=1
 " }
 
 " over 100 words highlights {
