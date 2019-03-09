@@ -106,6 +106,7 @@ call NERDTreeHighlightFile('styl',   'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('vue',    'green',   'none', 'green', '#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
 " }
 
