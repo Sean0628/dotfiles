@@ -11,8 +11,7 @@ $ chsh -s $(which zsh)
 ### youcompleteme
 
 ```
-$ cd $HOME/.cache/dein/repos/github.com/valloric/youcompleteme/
-$ ./install.py --clang-completer
+$ $HOME/.cache/dein/repos/github.com/valloric/youcompleteme/install.py --clang-completer
 ```
 
 ## installment
