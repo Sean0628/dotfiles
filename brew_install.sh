@@ -30,3 +30,7 @@ fi
 if ! command_exists ripgrep ; then
   brew install ripgrep
 fi
+
+if ! command_exists autojump ; then
+  brew install autojump
+fi

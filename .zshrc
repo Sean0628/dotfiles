@@ -146,6 +146,10 @@ function gt() {
 }
 # }
 
+# to utilize antojump {
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# }
+
 # load .zshrc.local if exists {
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 # }
