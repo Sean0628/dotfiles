@@ -134,15 +134,21 @@ function gcop() {
 
 ## git branch -D a branch selected with peco
 function gdp() {
-  git branch $opt |
+  git branch |
     cut -b 3- |
     peco |
-    xargs git branch -D 
+    xargs git branch -D
 }
 
 ## get commit title
 function gt() {
   git log | sed 's/^[ \t]*//' | egrep "^refs" | peco | pbcopy
+}
+# }
+
+# ghq utils {
+function ghqp() {
+  ghq look $(ghq list | peco | cut -d '/' -f 3)
 }
 # }
 

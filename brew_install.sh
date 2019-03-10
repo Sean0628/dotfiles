@@ -34,3 +34,7 @@ fi
 if ! command_exists autojump ; then
   brew install autojump
 fi
+
+if ! command_exists ghq ; then
+  brew install ghq
+fi
