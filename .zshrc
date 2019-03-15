@@ -54,7 +54,7 @@ alias gf='git fetch'
 alias gs='git status'
 alias ggr='git grep'
 
-alias wf='vim $(date +%Y%m%d).md'
+alias wf='cd $HOME/others/workflow; vim $(date +%Y%m%d).md'
 alias sl='open /Applications/Slack.app'
 # }
 
