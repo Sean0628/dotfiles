@@ -30,7 +30,7 @@ bindkey '^N' history-beginning-search-forward
 
 ## peco
 function peco_history_search() {
-  BUFFER=`history -n 1 | tail -r | peco`
+  BUFFER=`history -n 1 | tail -r | awk '!ary[$0]++' | peco`
   CURSOR=$#BUFFER
   zle reset-prompt
 }
@@ -105,14 +105,6 @@ function prompt_exit_status() {
   fail=$'ρ(･ω･､%)ｲｼﾞｲｼﾞ'
 
   echo "%(?."%B%F{cyan}$success%b%f"."%B%F{red}$fail%b%f")"
-}
-# }
-
-# Google search {
-function ggl(){
-    local url="https://www.google.co.jp/search?q=$1"
-    local g="/Applications/Google Chrome.app"
-    open $url -a $g
 }
 # }
 
