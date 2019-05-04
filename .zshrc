@@ -41,6 +41,7 @@ bindkey '^R' peco_history_search
 # alias {
 alias vim='nvim'
 alias v='vagrant'
+alias d='docker'
 alias ll='ls -l'
 alias so='source'
 
