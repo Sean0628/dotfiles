@@ -50,6 +50,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('w0rp/ale')
   call dein#add('mattn/emmet-vim')
   call dein#add('jremmen/vim-ripgrep')
+  call dein#add('mxw/vim-jsx')
+  call dein#add('pangloss/vim-javascript')
 " }
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
