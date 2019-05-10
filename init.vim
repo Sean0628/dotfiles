@@ -163,3 +163,7 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 endif
 " }
+
+" ale {
+let g:ale_ruby_rubocop_executable = 'bundle'
+" }
