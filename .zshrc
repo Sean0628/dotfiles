@@ -24,6 +24,10 @@ setopt hist_ignore_dups
 setopt hist_verify
 ## remove extra blanks from commands
 setopt hist_reduce_blanks
+## appends every command to the history file once it is executed
+setopt inc_append_history
+## reloads the history whenever you use it
+setopt share_history
 ## history search
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
