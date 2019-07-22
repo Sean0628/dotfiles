@@ -43,7 +43,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('rakr/vim-one')
   call dein#add('scrooloose/nerdtree')
   call dein#add('tpope/vim-fugitive')
-  call dein#add('Shougo/denite.nvim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('tpope/vim-endwise')
   call dein#add('Valloric/YouCompleteMe', {'merged': 0})
@@ -52,6 +51,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('jremmen/vim-ripgrep')
   call dein#add('mxw/vim-jsx')
   call dein#add('pangloss/vim-javascript')
+  call dein#add('ctrlpvim/ctrlp.vim')
 " }
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -126,32 +126,6 @@ highlight NonText ctermbg=NONE guibg=NONE
 highlight SpecialKey ctermbg=NONE guibg=NONE
 " }
 
-" denite {
-noremap <C-p> :Denite file/rec<CR>
-noremap <C-b> :Denite buffer<CR>
-" > keymaps
-call denite#custom#map('insert', '<C-a>', '<Home>')
-call denite#custom#map('insert', '<C-e>', '<End>')
-call denite#custom#map('insert', '<C-f>', '<Right>')
-call denite#custom#map('insert', '<C-b>', '<Left>')
-call denite#custom#map('insert', '<C-d>', '<denite:delete_char_before_caret>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:delete_text_after_caret>', 'noremap')
-call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-o>', '<denite:do_action:open>', 'noremap')
-call denite#custom#map('insert', '<C-s>', '<denite:do_action:vsplit>', 'noremap')
-" > ag saerch
-call denite#custom#var('file/rec', 'command',
-  \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts',
-  \ ['-i', '--vimgrep'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-" }
-
 " ctags {
 nnoremap <C-c> :!ctags -R .<CR>
 " }
@@ -168,4 +142,19 @@ endif
 let g:ale_ruby_rubocop_executable = 'bundle'
 let b:ale_fixers = {'javascript': ['prettier']}
 let g:ale_fix_on_save = 1
+" }
+"
+" ctrlp.vim {
+" nnoremap <Leader>m :CtrlPMRUFiles<CR>
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_match_window = 'bottom, order:ttb, min:1m max:40'
+let g:ctrlp_working_path_mode = 'w'
+
+if executable('rg')
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = 'rg --files %s'
+elseif executable('ag')
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g ""'
+endif
 " }
