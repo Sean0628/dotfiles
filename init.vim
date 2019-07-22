@@ -10,6 +10,8 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%,space:•
 set clipboard+=unnamed
 set history=200
 set ts=2 sw=2 et
+
+let mapleader = "\<Space>"
 " }
 
 " Key mappings {
@@ -145,10 +147,11 @@ let g:ale_fix_on_save = 1
 " }
 "
 " ctrlp.vim {
-" nnoremap <Leader>m :CtrlPMRUFiles<CR>
+nnoremap <Leader>m :CtrlPMRUFiles<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_match_window = 'bottom, order:ttb, min:1m max:40'
 let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_mruf_relative = 1
 
 if executable('rg')
   let g:ctrlp_use_caching = 0
