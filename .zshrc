@@ -47,7 +47,7 @@ alias vim='nvim'
 alias v='vagrant'
 alias d='docker'
 alias ll='ls -l'
-alias so='source'
+alias so='source ~/.zshrc'
 
 alias g='git'
 alias ga='git add'
