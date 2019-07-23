@@ -54,6 +54,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('mxw/vim-jsx')
   call dein#add('pangloss/vim-javascript')
   call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('leafgarland/typescript-vim')
 " }
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -99,8 +100,8 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
+call NERDTreeHighlightFile('md',     'Magenta', 'none', '#3366FF', '#151515')
 call NERDTreeHighlightFile('py',     'yellow',  'none', 'yellow',  '#151515')
-call NERDTreeHighlightFile('md',     'blue',    'none', '#3366FF', '#151515')
 call NERDTreeHighlightFile('yml',    'yellow',  'none', 'yellow',  '#151515')
 call NERDTreeHighlightFile('config', 'yellow',  'none', 'yellow',  '#151515')
 call NERDTreeHighlightFile('conf',   'yellow',  'none', 'yellow',  '#151515')
@@ -109,9 +110,11 @@ call NERDTreeHighlightFile('html',   'yellow',  'none', 'yellow',  '#151515')
 call NERDTreeHighlightFile('styl',   'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
-call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('vue',    'green',   'none', 'green', '#151515')
-call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('php',    'blue',    'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('js',     'blue',    'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('ts',     'blue',    'none', 'green',   '#151515')
+call NERDTreeHighlightFile('vue',    'green',   'none', 'green',   '#151515')
+call NERDTreeHighlightFile('jsx',    'green',   'none', 'green',   '#151515')
 " }
 
 " vim-one {
@@ -145,7 +148,7 @@ let g:ale_ruby_rubocop_executable = 'bundle'
 let b:ale_fixers = {'javascript': ['prettier']}
 let g:ale_fix_on_save = 1
 " }
-"
+
 " ctrlp.vim {
 nnoremap <Leader>m :CtrlPMRUFiles<CR>
 let g:ctrlp_show_hidden = 1
@@ -160,4 +163,8 @@ elseif executable('ag')
   let g:ctrlp_use_caching = 0
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g ""'
 endif
+" }
+
+" vim-javascript {
+let g:javascript_plugin_flow = 1
 " }
