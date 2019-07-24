@@ -144,7 +144,6 @@ endif
 " }
 
 " ale {
-let g:ale_ruby_rubocop_executable = 'bundle'
 let b:ale_fixers = {'javascript': ['prettier']}
 let g:ale_fix_on_save = 1
 " }
