@@ -48,7 +48,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('tpope/vim-endwise')
   call dein#add('Valloric/YouCompleteMe', {'merged': 0})
-  call dein#add('w0rp/ale')
+  call dein#add('dense-analysis/ale')
   call dein#add('mattn/emmet-vim')
   call dein#add('jremmen/vim-ripgrep')
   call dein#add('mxw/vim-jsx')
@@ -144,7 +144,8 @@ endif
 " }
 
 " ale {
-let b:ale_fixers = {'javascript': ['prettier']}
+let g:ale_fixers = ['prettier', 'eslint']
+let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint'] }
 let g:ale_fix_on_save = 1
 " }
 
