@@ -147,6 +147,15 @@ endif
 let g:ale_fixers = ['prettier', 'eslint']
 let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint'] }
 let g:ale_fix_on_save = 1
+function! ToggleFixOnSave()
+   let g:ale_fix_on_save = !g:ale_fix_on_save
+   if g:ale_fix_on_save == 1
+     echo 'fix_on_save is ON'
+   else
+     echo 'fix_on_save is OFF'
+   endif
+ endfunction
+ nmap <silent> <Leader>a :call ToggleFixOnSave()<CR>
 " }
 
 " ctrlp.vim {

@@ -1,7 +1,7 @@
 # evals {
 export BUNDLER_EDITOR=vim
 if [ ! -z "$TMUX" ]; then
-  export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH" # [rbenv, nodebrew]
+  export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH:/usr/local/sbin:$PATH" # [rbenv, nodebrew]
   eval "$(rbenv init -)"
 fi
 # }
