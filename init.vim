@@ -144,18 +144,45 @@ endif
 " }
 
 " ale {
-let g:ale_fixers = ['prettier', 'eslint']
-let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint'] }
-let g:ale_fix_on_save = 1
-function! ToggleFixOnSave()
-   let g:ale_fix_on_save = !g:ale_fix_on_save
-   if g:ale_fix_on_save == 1
-     echo 'fix_on_save is ON'
-   else
-     echo 'fix_on_save is OFF'
-   endif
- endfunction
- nmap <silent> <Leader>a :call ToggleFixOnSave()<CR>
+  nmap <silent> <C-j> <Plug>(ale_next_wrap)
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+  nmap <silent> <Leader>f :ALEFix<CR>
+  let g:ale_fixers = {
+  \   'javascript': [
+  \       'prettier',
+  \   ],
+  \   'typescript': [
+  \       'prettier',
+  \   ],
+  \   'yaml': [
+  \       'prettier',
+  \   ],
+  \   'ruby': [
+  \       'rubocop',
+  \   ],
+  \}
+  let g:ale_ruby_rubocop_options = ['--force-exclusion']
+  let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint'] }
+
+  let g:ale_fix_on_save = 1
+  let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+  let g:ale_ruby_rubocop_options = '-D'
+  let g:ale_lint_on_text_changed = 'always'
+  let g:ale_open_list = 0
+  " You can disable this option too
+  " if you don't want linters to run on opening a file
+  let g:ale_lint_on_enter = 0
+
+  function! ToggleFixOnSave()
+    let g:ale_fix_on_save = !g:ale_fix_on_save
+    if g:ale_fix_on_save == 1
+      echo 'fix_on_save is ON'
+    else
+      echo 'fix_on_save is OFF'
+    endif
+  endfunction
+
+  nmap <silent> <Leader>a :call ToggleFixOnSave()<CR>" }
 " }
 
 " ctrlp.vim {
