@@ -141,6 +141,14 @@ function gdp() {
 function gt() {
   git log | sed 's/^[ \t]*//' | egrep "^refs" | peco | pbcopy
 }
+
+## delete all merged branches
+function gd-merged() {
+  git branch --merged |
+    grep -v '*' |
+    xargs -I % git branch -d %
+}
+
 # }
 
 # ghq utils {
