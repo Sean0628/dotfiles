@@ -146,6 +146,9 @@ function gt() {
 function gd-merged() {
   git branch --merged |
     grep -v '*' |
+    grep -v 'master' |
+    grep -v 'develop' |
+    grep -v 'release' |
     xargs -I % git branch -d %
 }
 
