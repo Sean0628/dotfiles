@@ -3,6 +3,10 @@ function command_exists {
   command -v "$1" > /dev/null;
 }
 
+function gem_exists {
+  gem list -i "$1" > /dev/null;
+}
+
 if ! command_exists nvim ; then
   brew install neovim
 fi
@@ -37,4 +41,8 @@ fi
 
 if ! command_exists ghq ; then
   brew install ghq
+fi
+
+if ! gem_exists tmuxinator ; then
+  gem install tmuxinator
 fi

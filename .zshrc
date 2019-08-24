@@ -1,16 +1,15 @@
 # evals {
-export BUNDLER_EDITOR=vim
-if [ ! -z "$TMUX" ]; then
-  export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH:/usr/local/sbin:$PATH" # [rbenv, nodebrew]
-  eval "$(rbenv init -)"
-fi
+export EDITOR=nvim
+export BUNDLER_EDITOR=nvim
+
+export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH:/usr/local/sbin:$PATH" # [rbenv, nodebrew]
+eval "$(rbenv init -)"
 # }
 
 # modify misspelled commands
 setopt correct
 # set max file descriptor
 ulimit -n 9480
-
 # history {
 ## where to place history file
 export HISTFILE=$HOME/.zsh_history
