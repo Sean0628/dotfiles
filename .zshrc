@@ -10,6 +10,9 @@ eval "$(rbenv init -)"
 setopt correct
 # set max file descriptor
 ulimit -n 9480
+# use emacs keybindings
+bindkey -e
+
 # history {
 ## where to place history file
 export HISTFILE=$HOME/.zsh_history
