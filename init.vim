@@ -93,7 +93,6 @@ endif
 
 " nerdtree {
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-autocmd vimenter * NERDTree
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
