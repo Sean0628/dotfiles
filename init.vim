@@ -22,6 +22,13 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
+nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>w :w<CR>
+nmap <Leader>g [git]
+nnoremap <silent> [git]b :Gblame<CR>
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <Leader>m :CtrlPMRUFiles<CR>
+nnoremap <C-c> :!ctags -R .<CR>
 
 " > input
 inoremap <silent> jj <ESC>
@@ -92,8 +99,6 @@ endif
 " }
 
 " nerdtree {
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
   exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
@@ -128,10 +133,6 @@ set t_8f=^[[38;2;%lu;%lu;%lum
 highlight Normal guibg=NONE ctermbg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 highlight SpecialKey ctermbg=NONE guibg=NONE
-" }
-
-" ctags {
-nnoremap <C-c> :!ctags -R .<CR>
 " }
 
 " over 100 words highlights {
@@ -185,7 +186,6 @@ endif
 " }
 
 " ctrlp.vim {
-nnoremap <Leader>m :CtrlPMRUFiles<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_match_window = 'bottom, order:ttb, min:1m max:40'
 let g:ctrlp_working_path_mode = 'w'
