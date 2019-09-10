@@ -42,7 +42,3 @@ fi
 if ! command_exists ghq ; then
   brew install ghq
 fi
-
-if ! gem_exists tmuxinator ; then
-  gem install tmuxinator
-fi
