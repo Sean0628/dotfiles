@@ -108,8 +108,8 @@ function prompt_current_path() {
 function prompt_exit_status() {
   local success fail
 
-  success=$'(ｏ￣∀￣%)ﾉ”ぁぃ'
-  fail=$'ρ(･ω･､%)ｲｼﾞｲｼﾞ'
+  success=$'\\( ⁰⊖⁰%)/'
+  fail=$'/( ⁰⊖⁰%)\\'
 
   echo "%(?."%B%F{cyan}$success%b%f"."%B%F{red}$fail%b%f")"
 }
