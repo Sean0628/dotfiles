@@ -48,6 +48,7 @@ bindkey '^R' peco_history_search
 alias vim='nvim'
 alias v='vagrant'
 alias d='docker'
+alias dk='docker-compose'
 alias ll='ls -l'
 alias so='source ~/.zshrc'
 
