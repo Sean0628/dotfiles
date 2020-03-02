@@ -49,6 +49,7 @@ alias vim='nvim'
 alias v='vagrant'
 alias d='docker'
 alias dk='docker-compose'
+alias kb='kubectl'
 alias ll='ls -l'
 alias so='source ~/.zshrc'
 
