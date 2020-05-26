@@ -2,7 +2,7 @@
 export EDITOR=nvim
 export BUNDLER_EDITOR=nvim
 
-export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH:/usr/local/sbin:$PATH" # [rbenv, nodebrew]
+export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH:/usr/local/sbin:$PATH:/usr/local/bin:$PATH" # [rbenv, nodebrew]
 eval "$(rbenv init -)"
 # }
 
@@ -17,7 +17,7 @@ bindkey -e
 ## where to place history file
 export HISTFILE=$HOME/.zsh_history
 ## the size of history stored in-memory
-export HISTSIZE=1000
+export HISTSIZE=10000
 ## the size of history stored in the history file
 export SAVEHIST=100000
 ## ignore duplicates
@@ -64,12 +64,11 @@ alias gs='git status'
 alias ggr='git grep'
 
 alias wf='cd $HOME/others/workflow; vim $(date +%Y%m%d).md'
-alias sl='open /Applications/Slack.app'
 # }
 
 # prompt {
 function precmd() {
-  PROMPT="`prompt_exit_status` `prompt_current_path` `prompt_current_branch`> "
+  PROMPT="`prompt_current_path` `prompt_current_branch`> "
 }
 
 function prompt_current_branch() {
@@ -107,14 +106,6 @@ function prompt_current_path() {
   echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}
 }
 
-function prompt_exit_status() {
-  local success fail
-
-  success=$'\\( ⁰⊖⁰%)/'
-  fail=$'/( ⁰⊖⁰%)\\'
-
-  echo "%(?."%B%F{cyan}$success%b%f"."%B%F{red}$fail%b%f")"
-}
 # }
 
 # git utils {
@@ -166,6 +157,10 @@ function ghqp() {
 
 # to utilize antojump {
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# }
+
+# trigger direnv {
+eval "$(direnv hook zsh)"
 # }
 
 # load .zshrc.local if exists {
