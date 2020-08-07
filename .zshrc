@@ -71,7 +71,7 @@ alias wf='cd $HOME/others/workflow; vim $(date +%Y%m%d).md'
 # prompt {
 function precmd() {
   NEWLINE=$'\n'
-  PROMPT="`prompt_current_path` `prompt_current_branch`${NEWLINE}>>> "
+  PROMPT="`prompt_current_path``prompt_current_branch`${NEWLINE}>>> "
 }
 
 function prompt_current_branch() {
@@ -102,7 +102,7 @@ function prompt_current_branch() {
   else
     color='blue'
   fi
-  echo "%F{$color}[$branch_name$branch_status]%f"
+  echo ":%F{$color}$branch_name$branch_status%f"
 }
 
 function prompt_current_path() {
