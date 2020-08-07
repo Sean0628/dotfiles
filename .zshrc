@@ -70,7 +70,8 @@ alias wf='cd $HOME/others/workflow; vim $(date +%Y%m%d).md'
 
 # prompt {
 function precmd() {
-  PROMPT="`prompt_current_path` `prompt_current_branch`> "
+  NEWLINE=$'\n'
+  PROMPT="`prompt_current_path` `prompt_current_branch`${NEWLINE}>>> "
 }
 
 function prompt_current_branch() {
