@@ -11,7 +11,7 @@ declare -A commandList=( \
   [nvim]=neovim [ag]=the_silver_searcher \
   [ctags]=ctags [CMake]=CMake [tmux]=tmux \
   [rg]=ripgrep [autojump]=autojump [ghq]=ghq \
-  [jq]=jq
+  [jq]=jq [peco]=peco
   )
 
 for key val in ${(kv)commandList}; do

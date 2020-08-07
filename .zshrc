@@ -2,8 +2,10 @@
 export EDITOR=nvim
 export BUNDLER_EDITOR=nvim
 
-export PATH="$HOME/.rbenv/bin:$HOME/.nodebrew/current/bin:$PATH:/usr/local/sbin:$PATH:/usr/local/bin:$PATH" # [rbenv, nodebrew]
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH" # [rbenv]
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
+eval "$(nodenv init -)"
 # }
 
 # modify misspelled commands

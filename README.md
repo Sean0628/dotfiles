@@ -1,13 +1,6 @@
 # dotfiles
 ## prerequisites
 
-### zsh
-```
-$ sudo vim /etc/shells
-# add the result of the command $ which zsh at the bottom
-$ chsh -s $(which zsh)
-```
-
 ### youcompleteme
 
 ```
