@@ -158,6 +158,23 @@ function ghqp() {
 }
 # }
 
+# ssh utils {
+function sshp() {
+  local selected_host=$(awk '
+  tolower($1)=="host" {
+    for (i=2; i<=NF; i++) {
+      if ($i !~ "[*?]") {
+        print $i
+      }
+    }
+  }
+  ' ~/.ssh/config | peco)
+  if [ -n "$selected_host" ]; then
+    ssh ${selected_host}
+  fi
+}
+# }
+
 # to utilize antojump {
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # }
