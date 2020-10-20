@@ -1,5 +1,5 @@
 # dotfiles
-## prerequisites
+## Prerequisites
 
 ### youcompleteme
 
@@ -7,7 +7,7 @@
 $ $HOME/.cache/dein/repos/github.com/valloric/youcompleteme/install.py --clang-completer
 ```
 
-## installment
+## Installation
 
 ```
 $ cd ~/
