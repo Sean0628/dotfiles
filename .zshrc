@@ -2,7 +2,7 @@
 export EDITOR=nvim
 export BUNDLER_EDITOR=nvim
 
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH" # [rbenv]
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH:$(go env GOPATH)/bin" # [rbenv]
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(nodenv init -)"
