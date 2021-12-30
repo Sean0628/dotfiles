@@ -1,0 +1,40 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindings": [
+        // Easy escape to normal mode
+        {
+          "before": ["j", "j"],
+          "after": ["<Esc>"]
+        }
+      ],
+      "vim.normalModeKeyBindingsNonRecursive": [
+        // Toggle buffer
+        {
+          "before": [
+            "<leader>",
+            "<leader>",
+          ],
+          "commands": [
+            {
+              "command": "workbench.action.openPreviousEditorFromHistory",
+            },
+            {
+              "command": "workbench.action.acceptSelectedQuickOpenItem",
+            }
+          ]
+        },
+      ],
+      "vim.normalModeKeyBindings": [
+        // Easy save
+        {
+            "before": ["leader", "w"],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        }
+    ],
+    "terminal.integrated.defaultProfile.osx": "tmux",
+    "files.insertFinalNewline": true
+}
