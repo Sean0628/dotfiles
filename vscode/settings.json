@@ -36,5 +36,7 @@
         }
     ],
     "terminal.integrated.defaultProfile.osx": "tmux",
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "explorer.confirmDragAndDrop": false
 }

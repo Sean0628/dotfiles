@@ -1,2 +1,3 @@
+eamodio.gitlens
 golang.go
 vscodevim.vim
