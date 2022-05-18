@@ -48,7 +48,6 @@ bindkey '^R' peco_history_search
 
 # alias {
 alias vim='nvim'
-alias v='vagrant'
 alias d='docker'
 alias dk='docker-compose'
 alias kb='kubectl'
@@ -66,6 +65,8 @@ alias gs='git status'
 alias ggr='git grep'
 
 alias wf='cd $HOME/others/workflow; vim $(date +%Y%m%d).md'
+
+alias g='g++ -std=c++17 -O2'
 # }
 
 # prompt {
