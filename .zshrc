@@ -66,7 +66,7 @@ alias ggr='git grep'
 
 alias wf='cd $HOME/others/workflow; vim $(date +%Y%m%d).md'
 
-alias g='g++ -std=c++17 -O2'
+alias gg='g++ -std=c++17 -O2'
 # }
 
 # prompt {
