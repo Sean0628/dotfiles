@@ -164,7 +164,7 @@ endif
   \   ],
   \}
   let g:ale_ruby_rubocop_options = ['--force-exclusion']
-  let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint'] }
+  let g:ale_linters = {'javascript': ['eslint'], 'javascript.jsx': ['eslint'], 'c++': ['g++'] }
 
   let g:ale_fix_on_save = 1
   let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -174,6 +174,9 @@ endif
   " You can disable this option too
   " if you don't want linters to run on opening a file
   let g:ale_lint_on_enter = 0
+
+  let g:ale_cpp_clang_options = '-std=c++17'
+  let g:ale_cpp_gcc_options = '-std=c++17'
 
   function! ToggleFixOnSave()
     let g:ale_fix_on_save = !g:ale_fix_on_save
