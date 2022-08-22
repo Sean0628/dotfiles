@@ -175,8 +175,8 @@ endif
   " if you don't want linters to run on opening a file
   let g:ale_lint_on_enter = 0
 
-  let g:ale_cpp_clang_options = '-std=c++17'
-  let g:ale_cpp_gcc_options = '-std=c++17'
+  let g:ale_cpp_clang_options = '-std=c++17 -I./src'
+  let g:ale_cpp_gcc_options = '-std=c++17 -I./src'
 
   function! ToggleFixOnSave()
     let g:ale_fix_on_save = !g:ale_fix_on_save
