@@ -62,7 +62,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('pangloss/vim-javascript')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('leafgarland/typescript-vim')
-  call dein#add('evanleck/vim-svelte')
   call dein#add('rust-lang/rust.vim')
 " }
   if !has('nvim')
