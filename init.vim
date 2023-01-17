@@ -63,6 +63,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('evanleck/vim-svelte')
+  call dein#add('rust-lang/rust.vim')
 " }
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -121,6 +122,7 @@ call NERDTreeHighlightFile('ts',     'blue',    'none', 'green',   '#151515')
 call NERDTreeHighlightFile('svelte', 'blue',    'none', 'green',   '#151515')
 call NERDTreeHighlightFile('vue',    'green',   'none', 'green',   '#151515')
 call NERDTreeHighlightFile('jsx',    'green',   'none', 'green',   '#151515')
+call NERDTreeHighlightFile('rs',     'green',   'none', 'green',   '#151515')
 " }
 
 " vim-one {
